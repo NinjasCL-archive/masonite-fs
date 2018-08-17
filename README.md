@@ -183,4 +183,11 @@ fs_lang.close()
 # ...
 ```
 
+## Installation
+
+You can use this package by git cloning the source code
+and use the pip installation command.
+
+`$ pip install --editable .`
+
 Made with <i>&#9829;</i> by <a href="https://ninjas.cl" target="_blank">Ninjas.cl</a>.
