@@ -2,26 +2,26 @@
 
 from fs import open_fs
 
-from filesystem import Openers, Paths
+from filesystem import openers, paths
 
 
 def os(path='.'):
     # We will use the current dir in the operating system fs as default value
-    return open_fs(Openers.OPERATING_SYSTEM + path)
+    return open_fs(openers.OPERATING_SYSTEM + path)
 
 
 def mock():
-    return open_fs(Openers.MEMORY)
+    return open_fs(openers.MEMORY)
 
 
 def fs(opener):
     return open_fs(opener)
 
 
-# Open Masonite Directories
+# load Masonite Directories
 
 def root():
-    return os(Paths.ROOT)
+    return os(paths.ROOT)
 
 
 def ___open_dir(path, base=None):
@@ -36,32 +36,32 @@ def ___open_dir(path, base=None):
 
 
 def app(base=None):
-    return ___open_dir(Paths.APP, base)
+    return ___open_dir(paths.APP, base)
 
 
 def bootstrap(base=None):
-    return ___open_dir(Paths.BOOTSTRAP, base)
+    return ___open_dir(paths.BOOTSTRAP, base)
 
 
 def config(base=None):
-    return ___open_dir(Paths.CONFIG, base)
+    return ___open_dir(paths.CONFIG, base)
 
 
 def databases(base=None):
-    return ___open_dir(Paths.DATABASES, base)
+    return ___open_dir(paths.DATABASES, base)
 
 
 def resources(base=None):
-    return ___open_dir(Paths.RESOURCES, base)
+    return ___open_dir(paths.RESOURCES, base)
 
 
 def routes(base=None):
-    return ___open_dir(Paths.ROUTES, base)
+    return ___open_dir(paths.ROUTES, base)
 
 
 def storage(base=None):
-    return ___open_dir(Paths.STORAGE, base)
+    return ___open_dir(paths.STORAGE, base)
 
 
 def tests(base=None):
-    return ___open_dir(Paths.TESTS, base)
+    return ___open_dir(paths.TESTS, base)

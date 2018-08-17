@@ -2,15 +2,15 @@
 
 from fs.copy import copy_fs, copy_structure
 
-from filesystem import Open
+from filesystem import load
 
 # See https://docs.pyfilesystem.org/en/latest/reference/copy.html?highlight=copy_structure#fs.copy.copy_fs
 
 
 def root(walker=None):
 
-    base = Open.root()
-    mock = Open.mock()
+    base = load.root()
+    mock = load.mock()
 
     copy_fs(base, mock, walker=walker)
     base.close()
@@ -20,8 +20,8 @@ def root(walker=None):
 
 def root_only_structure(walker=None):
 
-    base = Open.root()
-    mock = Open.mock()
+    base = load.root()
+    mock = load.mock()
 
     copy_structure(base, mock, walker=walker)
     base.close()
@@ -40,32 +40,32 @@ def ___get_fat_or_slim_fs(slim=False):
 
 
 def app(slim=False):
-    return Open.app(___get_fat_or_slim_fs(slim))
+    return load.app(___get_fat_or_slim_fs(slim))
 
 
 def bootstrap(slim=False):
-    return Open.bootstrap(___get_fat_or_slim_fs(slim))
+    return load.bootstrap(___get_fat_or_slim_fs(slim))
 
 
 def config(slim=False):
-    return Open.config(___get_fat_or_slim_fs(slim))
+    return load.config(___get_fat_or_slim_fs(slim))
 
 
 def databases(slim=False):
-    return Open.databases(___get_fat_or_slim_fs(slim))
+    return load.databases(___get_fat_or_slim_fs(slim))
 
 
 def resources(slim=False):
-    return Open.resources(___get_fat_or_slim_fs(slim))
+    return load.resources(___get_fat_or_slim_fs(slim))
 
 
 def routes(slim=False):
-    return Open.routes(___get_fat_or_slim_fs(slim))
+    return load.routes(___get_fat_or_slim_fs(slim))
 
 
 def storage(slim=False):
-    return Open.storage(___get_fat_or_slim_fs(slim))
+    return load.storage(___get_fat_or_slim_fs(slim))
 
 
 def tests(slim=False):
-    return Open.tests(___get_fat_or_slim_fs(slim))
+    return load.tests(___get_fat_or_slim_fs(slim))

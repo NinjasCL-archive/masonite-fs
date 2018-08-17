@@ -2,7 +2,7 @@
 
 from the import expect
 
-from filesystem import Openers
+from filesystem import openers
 
 
 class TestFileSystemOpeners:
@@ -11,13 +11,13 @@ class TestFileSystemOpeners:
         pass
 
     def test_that_opener_os_exists(self):
-        expect(Openers.OPERATING_SYSTEM).to.be.NOT.empty
+        expect(openers.OPERATING_SYSTEM).to.be.NOT.empty
 
     def test_that_opener_os_is_correct(self):
-        expect(Openers.OPERATING_SYSTEM).to.be.eq('osfs://')
+        expect(openers.OPERATING_SYSTEM).to.be.eq('osfs://')
 
     def test_that_opener_mem_exists(self):
-        expect(Openers.MEMORY).to.be.NOT.empty
+        expect(openers.MEMORY).to.be.NOT.empty
 
     def test_that_opener_mem_is_correct(self):
-        expect(Openers.MEMORY).to.be.eq('mem://')
+        expect(openers.MEMORY).to.be.eq('mem://')
